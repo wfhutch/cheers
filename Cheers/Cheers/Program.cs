@@ -21,7 +21,6 @@ namespace Cheers
                 {
                     System.Console.WriteLine("Give me a .. " + letter);
                     System.Console.ReadLine();
-
                 }
                 else
                 {
