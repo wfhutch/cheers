@@ -12,14 +12,16 @@ namespace Cheers
         {
             System.Console.WriteLine("Hello there! What's your name?");
             string name = System.Console.ReadLine();
+            string lowName = name.ToLower();
             System.Console.WriteLine("Hi, " + name);
-            foreach (char letter in name)
+            foreach (char letter in lowName)
             {
                 string anLetters = "halfnorsemixHALFNORSEMIX";
                 if (anLetters.IndexOf(letter) == -1)
                 {
                     System.Console.WriteLine("Give me a .. " + letter);
                     System.Console.ReadLine();
+
                 }
                 else
                 {
