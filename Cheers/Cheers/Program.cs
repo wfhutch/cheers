@@ -12,6 +12,11 @@ namespace Cheers
         {
             System.Console.WriteLine("Hello there! What's your name?");
             string name = System.Console.ReadLine();
+            System.Console.WriteLine("What's your birthday? (MM/DD)"); 
+            string birthday = System.Console.ReadLine();
+            DateTime userDate = Convert.ToDateTime(birthday);
+            DateTime dateNow = DateTime.Now;
+            dateNow = dateNow.Date;
             string lowName = name.ToLower();
             System.Console.WriteLine("Hi, " + name);
             foreach (char letter in lowName)
@@ -30,6 +35,20 @@ namespace Cheers
             }
             string newName = name.ToUpper();
             System.Console.WriteLine(newName + " is.. GRAND!");
+            if (userDate == dateNow)
+            {
+                System.Console.WriteLine("Happy Birthday!");
+            }
+            else
+            if (userDate < dateNow)
+            {
+                userDate = userDate.AddYears(1);
+                System.Console.WriteLine("Your birthday is " + Math.Abs((userDate - dateNow).TotalDays) + " days away!");
+            }
+            else
+            {
+                System.Console.WriteLine("Your birthday is " + Math.Abs((userDate - dateNow).TotalDays) + " days away!");
+            }
             System.Console.WriteLine("Press any key to exit");
             System.Console.ReadKey();
         }
