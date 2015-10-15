@@ -15,13 +15,12 @@ namespace Cheers
             System.Console.WriteLine("What's your birthday? (MM/DD)"); 
             string birthday = System.Console.ReadLine();
             DateTime userDate = Convert.ToDateTime(birthday);
-            DateTime dateNow = DateTime.Now;
-            dateNow = dateNow.Date;
+            DateTime dateNow = DateTime.Now.Date;
             string lowName = name.ToLower();
             System.Console.WriteLine("Hi, " + name);
             foreach (char letter in lowName)
             {
-                string anLetters = "halfnorsemixHALFNORSEMIX";
+                string anLetters = "halfnorsemix";
                 if (anLetters.IndexOf(letter) == -1)
                 {
                     System.Console.WriteLine("Give me a .. " + letter);
@@ -35,6 +34,7 @@ namespace Cheers
             }
             string newName = name.ToUpper();
             System.Console.WriteLine(newName + " is.. GRAND!");
+            var days = Math.Abs((userDate - dateNow).TotalDays);
             if (userDate == dateNow)
             {
                 System.Console.WriteLine("Happy Birthday!");
@@ -46,8 +46,13 @@ namespace Cheers
                 System.Console.WriteLine("Your birthday is " + Math.Abs((userDate - dateNow).TotalDays) + " days away!");
             }
             else
+            if (days == 1)
             {
-                System.Console.WriteLine("Your birthday is " + Math.Abs((userDate - dateNow).TotalDays) + " days away!");
+                System.Console.WriteLine("Your birthday is " + days + " day away!");
+            }
+            else
+            {
+                System.Console.WriteLine("Your birthday is " + days + " days away!");
             }
             System.Console.WriteLine("Press any key to exit");
             System.Console.ReadKey();
