@@ -33,7 +33,7 @@ namespace Cheers
                 }  
             }
             string newName = name.ToUpper();
-            System.Console.WriteLine(newName + " is.. GRAND!");
+            System.Console.WriteLine(newName + "'s just GRAND!");
             var days = Math.Abs((userDate - dateNow).TotalDays);
             if (userDate == dateNow)
             {
